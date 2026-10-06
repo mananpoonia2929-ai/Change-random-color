@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Colour</title>
+</head>
+
+<body>
+    <style>
+        .myButton {
+           background-color: #97d69a;
+              border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                align-items: center;
+                width: 50%;
+        }
+        
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    </style>
+
+    <button id="myButton" class="myButton">Change Colour</button>
+
+    <script>
+        let button = document.getElementById("myButton");
+
+        button.addEventListener("click", function () {
+            let randomColour = "#" + Math.floor(Math.random() * 0x1000000)
+                .toString(16)
+                .padStart(6, "0");
+
+            document.body.style.backgroundColor = randomColour;
+        });
+    </script>
+</body>
+</html>
